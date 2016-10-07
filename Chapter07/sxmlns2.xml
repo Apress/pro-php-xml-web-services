@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book lang="en">
+   <bookinfo xmlns="http://www.example.com/ns1">
+      <title>SimpleXML in PHP 5</title>
+      <author>
+         <firstname>Rob</firstname>
+         <surname>Richards</surname>
+      </author>
+      <copyright>
+         <year>2005</year>
+         <holder>Rob Richards</holder>
+      </copyright>
+   </bookinfo>
+</book>

@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<chapter xmlns:a="http://www.example.com/namespace-a"
+         xmlns="http://www.example.com/default">
+   <a:title>XMLReader</a:title>
+   <para>
+      First Paragraph
+   </para>
+   <a:section a:id="about">
+      <title>About this Document</title>
+      <para>
+         <!-- this is a comment -->
+         <?php echo 'Hi!  This is PHP version ' . phpversion(); ?>
+      </para>
+    </a:section>
+</chapter>

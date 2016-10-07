@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="courses">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="course" minOccurs="0" maxOccurs="unbounded">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="title" type="xsd:string"/>
+                     <xsd:element name="description" type="xsd:string"/>
+                     <xsd:element name="credits" type="xsd:decimal"/>
+                     <xsd:element name="lastmodified" type="xsd:dateTime"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="cid" type="xsd:ID"/>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>
+

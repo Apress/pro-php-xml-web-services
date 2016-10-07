@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<book lang="en">
+   <bookinfo>
+      <title>SimpleXML in PHP 5</title>
+      <author>
+         <firstname>Rob</firstname>
+         <surname>Richards</surname>
+      </author>
+      <copyright>
+         <year>2005</year>
+         <holder>Rob Richards</holder>
+      </copyright>
+   </bookinfo>
+   <preface>
+      <title>Using SimpleXML</title>
+      <para>An example DOM Tree using DocBook.</para>
+   </preface>
+   <chapter id="navigation">
+      <title>Accessing Elements</title>
+      <para>Elements are accessed as properties</para>
+      <para>
+         <![CDATA[
+            <?php
+            $data = '<?xml version="1.0"?>
+            <root>content</root>';
+
+            $sxe = simplexml_load_string($data);
+            var_dump($sxe);
+            ?>
+         ]]>
+      </para>
+   </chapter>
+</book>

@@ -1,0 +1,11 @@
+<courses>
+   <course>
+      <title>French I</title>
+      <description>Introductory French</description>
+   </course>
+   <course>
+      <title>French II</title>
+     <description>Intermediate French</description>
+   </course>
+</courses>
+

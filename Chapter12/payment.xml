@@ -1,0 +1,10 @@
+<payment>
+   <order_number>1001</order_number>
+   <customer>Joe Smith</customer>
+   <creditcard>
+      <number>4111 1111 1111 1111</number>
+      <expiration_month>01</expiration_month>
+      <expiration_year>2007</expiration_year>
+      <ccv2>123</ccv2>
+   </creditcard>
+</payment>

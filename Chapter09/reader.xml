@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<!DOCTYPE chapter [
+<!ELEMENT chapter (title, para, section)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT para ANY>
+<!ATTLIST para name CDATA "default">
+<!ELEMENT section ANY>
+<!ATTLIST section id ID #REQUIRED>
+]>
+<chapter>
+   <title>XMLReader</title>
+   <para>
+      First Paragraph
+   </para>
+   <section id="about">
+      <title>About this Document</title>
+      <para>
+         <!-- this is a comment -->
+         <?php echo 'Hi!  This is PHP version ' . phpversion(); ?>
+      </para>
+    </section>
+</chapter>

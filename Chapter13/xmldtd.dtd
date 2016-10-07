@@ -1,0 +1,5 @@
+<!ELEMENT courses (course+)>
+<!ELEMENT course (title, description)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+

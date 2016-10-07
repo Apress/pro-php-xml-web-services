@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<script language="javascript">
+var httpreq;
+
+// Change the location to point to your server script
+var server = 'http://www.example.com/ajax.php';
+
+// function called by onblur in form
+function checkusername(input) {
+    url  = server + '?uname=' + input;
+
+   // native XMLHttpRequest
+   if (window.XMLHttpRequest) {
+      httpreq = new XMLHttpRequest();
+
+      // Register the response callback
+      httpreq.onreadystatechange = processReqChange;
+      httpreq.open("GET", url, true);
+      httpreq.send(null);
+   // Windows/IE
+   } else if (window.ActiveXObject) {
+      httpreq = new ActiveXObject("Microsoft.XMLHTTP");
+      if (httpreq) {
+         // Register the response callback
+         httpreq.onreadystatechange = processReqChange;
+         httpreq.open("GET", url, true);
+         httpreq.send();
+      }
+   }
+}
+
+// response handler function
+function processReqChange()  {
+   if (httpreq.readyState == 4) {
+      if (httpreq.status == 200) {
+         response  = httpreq.responseXML.documentElement;
+         result    = response.getElementsByTagName('result')[0].firstChild.data;
+         if (result == 1) {
+            alert('Username already taken');
+         } else {
+            document.form1.submitinfo.disabled = false;
+         }
+      } else {
+         alert("Unable to retrieve Data:\n" + httpreq.statusText);
+      }
+   }
+}
+</script>
+</head>
+<body>
+   <form name="form1" id="form1">
+      Username: <input id="username" name="username" type="text"
+                       onblur="checkusername(this.value)" /><br>
+      Password: <input id="password" name="password" type="password" /><br>
+      First Name: <input id="firstname" name="firstname" type="text" /><br>
+      Last Name: <input id="firstname" name="firstname" type="text" /><br>
+      <input type="submit" name="submitinfo" id="submit" disabled /><br>
+   </form>
+</body>
+</html>
+

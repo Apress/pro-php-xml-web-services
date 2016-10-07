@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="0.91">
+   <channel>
+      <title>My RSS Feed</title>
+      <link>http://www.example.com/feed.rss</link>
+      <description>My Example Rss Feed</description>
+      <language>en</language>
+      <item>
+         <title>CDATA Section contained within descrptiondescription</title>
+         <link>http://www.example.xom/cdata.html</link>
+         <description><![CDATA[<p>CDATA sections contain the content for
+            the description element so may contain any type 
+            of characters</p>]]></description>
+      </item>
+      <item>
+         <title>RSS 0.91 does not have any namespaces</title>
+         <link>http://www.example.com/namespaces.html</link>
+         <description><![CDATA[<p>No need to deal with namespaces when 
+            using RSS 0.91.]]></description>
+      </item>
+   </channel>
+</rss>

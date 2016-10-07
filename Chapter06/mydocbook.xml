@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<book lang="en>
+   <bookinfo>
+      <title>DOM in PHP 5</title>
+      <author>
+         <firstname>Rob</firstname>
+         <surname>Richards</surname>
+      </author>
+      <copyright>
+         <year>2005</year>
+         <holder>Rob Richards</holder>
+      </copyright>
+   </bookinfo>
+   <preface>
+      <title>The DOM Tree</title>
+      <para>An example DOM Tree using DocBook.</para>
+   </preface>
+   <chapter id="navigation">
+      <title>Navigating The Tree</title>
+      <para>The document element is accessed from the
+ <emphasis>documentElement</emphasis> property, which is available from any class derived from DOMNode</para>
+      <para>The document node is also accessible using the <emphasis>ownerDocument</emphasis> property, also derived from the DOMNode
+ class.</para>
+   </chapter>
+</book>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<sites>
+   <site>
+      <name>PHP General</name>
+      <url>http://news.php.net/group.php?group=php.general&amp;format=rss</url>
+   </site>
+   <site>
+      <name>PHP Pear Dev</name>
+      <url>http://news.php.net/group.php?group=php.pear.dev&amp;format=rss</url>
+   </site>
+</sites>

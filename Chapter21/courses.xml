@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses>
+   <course cid="c1">
+      <title>Basic Languages</title>
+      <description>Introduction to Languages</description>
+      <credits>1.5</credits>
+      <lastmodified>2004-09-01T11:13:01</lastmodified>
+   </course>
+   <course cid="c2">
+      <title>French I</title>
+      <description>Introduction to French</description>
+      <credits>3.0</credits>
+      <lastmodified>2005-06-01T14:21:37</lastmodified>
+   </course>
+</courses>
+

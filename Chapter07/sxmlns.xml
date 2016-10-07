@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book ns2:lang="en" xmlns:ns1="http://www.example.com/ns1"
+                    xmlns:ns2="http://www.example.com/ns2">
+   <ns1:bookinfo>
+      <title>SimpleXML in PHP 5</title>
+      <ns1:author>
+         <ns1:firstname>Rob</ns1:firstname>
+         <surname>Richards</surname>
+      </ns1:author>
+      <copyright>
+         <year>2005</year>
+         <holder>Rob Richards</holder>
+      </copyright>
+   </ns1:bookinfo>
+</book>

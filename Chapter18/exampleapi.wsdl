@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<definitions targetNamespace="urn:ExampleAPI" xmlns:tns="urn:ExampleAPI"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+   <types>
+      <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+                  targetNamespace="urn:ExampleAPI">
+         <xsd:element name="getPeopleByFirstLastName">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="first" type="xsd:string"/>
+                  <xsd:element name="last" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+
+         <xsd:complexType name="Person">
+            <xsd:all>
+               <xsd:element name="id" type="xsd:int"/>
+               <xsd:element name="lastName" type="xsd:string"/>
+               <xsd:element name="firstName" type="xsd:string"/>
+            </xsd:all>
+         </xsd:complexType>
+
+         <xsd:complexType name="ArrayOfPerson">
+            <xsd:complexContent>
+               <xsd:restriction base="soapenc:Array">
+                  <xsd:attribute ref="soapenc:arrayType"
+                                 wsdl:arrayType="tns:Person[]"/>
+               </xsd:restriction>
+            </xsd:complexContent>
+         </xsd:complexType>
+
+         <xsd:element name="getPeopleByFirstLastNameResponse"
+                      type="tns:ArrayOfPerson"/>
+
+         <xsd:element name="DBUnavailableFault">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="DBMessage" type="xsd:string"/>
+                  <xsd:element name="RetryInMinutes" type="xsd:int"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+
+         <xsd:element name="SystemMaintenance">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="SysMessage" type="xsd:string"/>
+                  <xsd:element name="RetryInMinutes" type="xsd:int"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:schema>
+   </types>
+
+   <!-- Input message -->
+   <message name="getPeopleByFirstLastName">
+      <part name="parameters" element="tns:getPeopleByFirstLastName"/>
+   </message>
+   <!-- Output Message -->
+   <message name="getPeopleByFirstLastNameResponse">
+      <part name="result" element="tns:getPeopleByFirstLastNameResponse"/>
+   </message>
+   <!-- Fault Messages -->
+   <message name="DBUnavailableFault">
+      <part name="DBUnavailableFault" element="tns:DBUnavailableFault"/>
+   </message>
+   <message name="SystemMaintenance">
+      <part name="SystemMaintenance" element="tns:SystemMaintenance"/>
+   </message>
+
+   <!-- Port for Example API -->
+   <portType name="ExamplePortType">
+      <operation name="getPeopleByFirstLastName">
+         <input message="tns:getPeopleByFirstLastName"/>
+         <output message="tns:getPeopleByFirstLastNameResponse"/>
+         <fault name="nodb" message="tns:DBUnavailableFault"/>
+         <fault name="sysmaint" message="tns:SystemMaintenance"/>
+      </operation>
+      <!-- Other operations -->
+   </portType>
+
+   <!-- Binding for Example API - Document/literal, SOAP over HTTP -->
+   <binding name="ExampleBinding" type="tns:ExamplePortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="getPeopleByFirstLastName">
+         <soap:operation soapAction="getPeopleByFirstLastName"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+         <fault name="nodb">
+            <soap:fault name="nodb" use="literal"/>
+         </fault>
+         <fault name="sysmaint">
+            <soap:fault name="sysmaint" use="literal"/>
+         </fault>
+      </operation>
+      <!-- Other operations -->
+   </binding>
+
+   <!-- Endpoint for Example API -->
+   <service name="ExampleService">
+      <port name="ExamplePort" binding="tns:ExampleBinding">
+         <soap:address location="http://www.example.com/ExampleService"/>
+      </port>
+   </service>
+</definitions>
+
